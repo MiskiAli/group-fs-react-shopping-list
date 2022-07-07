@@ -17,4 +17,21 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+    console.log('This is req.body', req.body);
+    const item = req.body;
+    
+    const queryText = `INSERT INTO "items" (name, quantity, unit)
+    VALUES ($1, $2, $3);
+    `;
+    pool.query(queryText, [item.name, item.quantity, item.unit])
+        .then((result) => {
+        console.log('item added to the DB', item)
+        res.sendStatus(201);
+    }).catch((error) => {
+        console.log('Error making database query', error);
+        res.sendStatus(200);
+    })
+})
+
 module.exports = router;

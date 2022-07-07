@@ -5,8 +5,8 @@ import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
-import { response } from 'express';
 
+function App() {
 // see if they created a state array container?
 const [shoppingList, setShoppingList] = useState([]);
 
@@ -26,10 +26,9 @@ const getShoppingList = () => {
 }
 
 
-
 // POST goes here
 const itemSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     axios({
         method: 'POST',
@@ -39,24 +38,30 @@ const itemSubmit = (event) => {
             quantity: newQuantity,
             unit: newUnit,
         }
+    }).then((response) => {
+        console.log('This is what we get from POST', response.data);
+        getShoppingList();
+    }).catch((error) => {
+        alert('Error in POST request:', error);
+        console.log('Error in POST request:', error);
     })
 
 
 }
 
 
-
-
 useEffect(() => {
     console.log('get here');
 } , [] )
 
-function App() {
 
+    itemSubmit();
     
     return (
         <div className="App">
-            <Header />
+            <Header 
+
+            />
             <main>
                 <p>Under Construction...</p>
             </main>
