@@ -13,6 +13,28 @@ const getShoppingList = () => {
 
 }
 
+
+
+// POST goes here
+const itemSubmit = (event) => {
+    event.preventDefault();
+
+    axios({
+        method: 'POST',
+        url: '/list',
+        data: {
+            name: newName,
+            quantity: newQuantity,
+            unit: newUnit,
+        }
+    })
+
+
+}
+
+
+
+
 useEffect(() => {
     console.log('get here');
 } , [] )
@@ -29,5 +51,7 @@ function App() {
         </div>
     );
 }
+
+
 
 export default App;
