@@ -10,10 +10,14 @@ function App() {
 // see if they created a state array container?
 const [shoppingList, setShoppingList] = useState([]);
 
+useEffect(() => {
+    console.log('get here');
+    getShoppingList();
+} , [] )
+
 
 // see if they created a state array container?
 const getShoppingList = () => {
-    const [shoppingList, setShoppingList] = useState([]);
 
     axios({
         method: 'GET',
@@ -52,14 +56,6 @@ const itemSubmit = (event) => {
 
 
 }
-
-
-useEffect(() => {
-    console.log('get here');
-} , [] )
-
-
-    itemSubmit();
     
     return (
         <div className="App">
