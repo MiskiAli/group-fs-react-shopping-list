@@ -5,12 +5,14 @@ import ShoppingList from '../ShoppingList/ShoppingList.jsx';
 import axios from 'axios';
 import Header from '../Header/Header.jsx'
 import './App.css';
-import { response } from 'express';
+// import { response } from 'express';
+
+function App() {
 
 // see if they created a state array container?
-const [shoppingList, setShoppingList] = useState([]);
-
 const getShoppingList = () => {
+    const [shoppingList, setShoppingList] = useState([]);
+
     axios({
         method: 'GET',
         url: '/list'
@@ -51,7 +53,7 @@ useEffect(() => {
     console.log('get here');
 } , [] )
 
-function App() {
+
 
     
     return (
