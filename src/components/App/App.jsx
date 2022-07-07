@@ -10,7 +10,11 @@ function App() {
 // see if they created a state array container?
 const [shoppingList, setShoppingList] = useState([]);
 
+
+// see if they created a state array container?
 const getShoppingList = () => {
+    const [shoppingList, setShoppingList] = useState([]);
+
     axios({
         method: 'GET',
         url: '/list'
