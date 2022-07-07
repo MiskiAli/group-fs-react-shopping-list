@@ -63,6 +63,8 @@ const itemSubmit = (event) => {
 
             />
             <main>
+                {/* needs prop!! */}
+                <ShoppingForm />
                 <p>Under Construction...</p>
             </main>
         </div>
