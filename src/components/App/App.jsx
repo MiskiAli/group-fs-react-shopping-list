@@ -58,6 +58,8 @@ function App() {
         <div className="App">
             <Header />
             <main>
+                {/* needs prop!! */}
+                <ShoppingForm />
                 <p>Under Construction...</p>
             </main>
         </div>
