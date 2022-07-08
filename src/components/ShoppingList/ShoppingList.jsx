@@ -1,6 +1,10 @@
 // import { addListener } from "nodemon";
 
-function ShoppingList({shoppingList}) {
+import { useState } from "react";
+
+function ShoppingList({shoppingList, purchaseItem}) {
+
+    const [newPurchase, setNewPurchase] = useState(false)
 
     console.log('test')
     return (
@@ -9,7 +13,7 @@ function ShoppingList({shoppingList}) {
                     {shoppingList.map(item => 
                         <div key={item.id}>
                             <li > {item.name} {item.quantity} {item.unit} </li>
-                            <button>Purchased</button>
+                            <button onClick={(event) => setNewPurchase(!event.target.value)}>Purchased</button>
                             <button>Delete</button>
                         </div>
                     )}
