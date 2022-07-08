@@ -11,9 +11,7 @@ function ShoppingList({shoppingList}) {
                     (<li key={item.id}> {item.name} {item.quantity} {item.unit} </li>)
                     )}
             </li>
-            
         </ul>
-
         </>
     );
 
