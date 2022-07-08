@@ -34,7 +34,7 @@ const getShoppingList = () => {
 }
 
 
-const purchaseItem = () => {
+const purchaseItem = (event) => {
     axios({
         method: 'PUT',
         url: '/list',
@@ -59,7 +59,9 @@ const purchaseItem = () => {
                 {/* needs prop!! */}
                 <ShoppingForm />
                 <ShoppingList
-                shoppingList = {shoppingList}
+                shoppingList = 
+                {shoppingList}
+                purchaseItem = {purchaseItem}
                 />
                 <p>Under Construction...</p>
             </main>
