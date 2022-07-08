@@ -1,9 +1,38 @@
+import {useState} from 'react';
+
 function ShoppingForm() {
 
     const [newName, setNewName]= useState('');
     const [newQuantity, setNewQuantity]= useState('');
     const [newUnit, setNewUnit]= useState('');
 // itemSubmit
+
+// POST goes here
+const itemSubmit = (event) => {
+    // event.preventDefault();
+
+    
+
+    axios({
+        method: 'POST',
+        url: '/list',
+        data: {
+            name: newName,
+            quantity: newQuantity,
+            unit: newUnit,
+        }
+    }).then((response) => {
+        console.log('This is what we get from POST', response.data);
+        getShoppingList();
+    }).catch((error) => {
+        alert('Error in POST request:', error);
+        console.log('Error in POST request:', error);
+    })
+
+
+}
+
+
 
     return (
         <>
