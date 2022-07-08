@@ -34,6 +34,20 @@ const getShoppingList = () => {
 }
 
 
+const purchaseItem = () => {
+    axios({
+        method: 'PUT',
+        url: '/list',
+        data: {purchased: true}
+    })
+    .then(function() {
+        getShoppingList();
+    })
+    .catch(function(error) {
+        alert('error in PUT', error);
+    })
+}
+
 
     
     return (

@@ -41,15 +41,15 @@ const itemSubmit = (event) => {
         <h2>Add An Item</h2>
         {/* check in later to make sure post function name is correct */}
         <form onSubmit={itemSubmit}>
-        <lable>Item: </lable>
+        <label>Item: </label>
         <input onChange= {(event) => setNewName(event.target.value)}
         value={newName}
         />
-        <lable>Quantity: </lable>
+        <label>Quantity: </label>
         <input onChange={(event)=> setNewQuantity(event.target.value)}
         value={newQuantity}
         />
-        <lable>Unit: </lable>
+        <label>Unit: </label>
         <input onChange={(event)=> setNewUnit(event.target.value)}
         value={newUnit}
         />
