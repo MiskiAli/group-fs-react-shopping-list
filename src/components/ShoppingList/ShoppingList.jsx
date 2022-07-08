@@ -5,13 +5,15 @@ function ShoppingList({shoppingList}) {
     console.log('test')
     return (
         <>
-        <ul>
-            <li>
-                {shoppingList.map(item => 
-                    (<li key={item.id}> {item.name} {item.quantity} {item.unit} </li>)
+            <ul>
+                    {shoppingList.map(item => 
+                        <div key={item.id}>
+                            <li > {item.name} {item.quantity} {item.unit} </li>
+                            <button>Purchased</button>
+                            <button>Delete</button>
+                        </div>
                     )}
-            </li>
-        </ul>
+            </ul>
         </>
     );
 

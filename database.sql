@@ -4,7 +4,7 @@ CREATE TABLE items (
 id SERIAL PRIMARY KEY,
 name VARCHAR(80) NOT NULL,
 quantity DECIMAL(7,2),
-unit VARCHAR(20)
+unit VARCHAR(20), purchased BOOLEAN DEFAULT false
 );
 
 INSERT INTO "items" ("name", "quantity", "unit") 
